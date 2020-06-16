@@ -55,12 +55,12 @@ Set up a very basic`express` app using `express` framework:
  2. Navigate to the `server` folder and create a new file called `index.js`
  3. Add the following code block to the `index.js` file:
  
- const express = require('express')
+   const express = require('express')
 
- const app = express()
+   const app = express()
 
- const port = 3000
+   const port = 3000
 
- app.get('/', (req, res) => res.send('Hello World!'));
+   app.get('/', (req, res) => res.send('Hello World!'));
 
- app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+   app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
