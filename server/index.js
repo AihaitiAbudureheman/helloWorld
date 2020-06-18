@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 /**
  * This make the 'Hello' model available here
  */
-require('./models/Post');
+require('./models/Student');
 
 /**
  * This blocks of code  help us extract ENV 
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
  */
 mongoose.Promise = global.Promise;
 try {
-  mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/helloworld', {
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/full_stack', {
       useNewUrlParser: true,
       useUnifiedTopology: true
     }, () =>
@@ -43,10 +43,10 @@ app.use(bodyParser.json());
 /**
  * Bindign the API END POINT to APP
  */
-require('./routes/helloRoute')(app);
+require('./routes/studentRoute')(app);
 
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("Hello World Again!"));
 
 
 const PORT = process.env.PORT || 5000;
