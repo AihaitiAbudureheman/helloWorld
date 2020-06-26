@@ -208,4 +208,17 @@ In order to connect the `React App` to the `Express App` and make use of the `Ap
  55. Create file called `spinner.js` inside `views` folder and create `functional component` called `Spinner`
  56. Create file called `addForm.js` inside `views` folder and create `class component` called `AddForm` and make POST API call to add new student to the database
  
+ 
+   /**
+   * 'v1/post/:id'  --Delete post by id
+   */
+  api.delete("/:id", (req, res) => {
+    Post.deleteOne({ _id: req.params.id }, (err, Post) => {
+      if (err) {
+        res.send({ message: err });
+      }
+      res.json({ message: "Post Deleted." });
+    });
+  });
+ 
 **That is it! Congratulations:)**
